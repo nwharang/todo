@@ -1,0 +1,11 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { navItems } from "@assets/navItems";
+const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title: "To Do App" };
+console.log(title);
+---
+
+<MainLayout title={title}>
+  <h1>Opp , Somethings when wrong</h1>
+  <h1>404 - Page Not Found</h1>
+</MainLayout>

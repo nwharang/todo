@@ -1,0 +1,48 @@
+---
+import { sideBarItem } from "@assets/navItems";
+// Fetch teams information from server base on title -- Astro component top level await -- for now it static values
+
+let todo = []; // should only display 10 todos
+let teams = []; // should only display 10 teams
+sideBarItem.map((e) => fetch(`http://localhost:3000/api/${e.title}`));
+---
+
+<>
+  <aside class="basis-[20rem] hidden sm:flex min-h-full">
+    <section class="sticky top-16 border border-black/10 dark:border-black/20 p-2 w-full h-[calc(100vh-4rem)] bg-white dark:bg-slate-700 z-0 flex-1" id="sidebar">
+      <h2 class="text-center mt-2 text-lg font-bold">Menu</h2>
+      <div class="divide-y divide-black/10 dark:divide-white/10">
+        {
+          sideBarItem.map((e) => (
+            <label class="animation-controll animate-slidein flex justify-between">
+              <input class="sr-only peer" name="sidebarmenu" type="checkbox" />
+              <h3 class="flex gap-2">
+                <Fragment set:html={e.icon} />
+                {e.title}
+              </h3>
+              <svg class="w-6 h-6 block peer-checked:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /> 
+              </svg>
+              <svg class="w-6 h-6 hidden peer-checked:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+              </svg>
+            </label>
+          ))
+        }
+      </div>
+    </section>
+    <script is:inline>
+      document.addEventListener("scroll", (e) => {
+        let sidebar = document.querySelector("#sidebar");
+        if (window.scrollY >= 32) {
+          sidebar.classList.replace("top-16", "top-0");
+          sidebar.classList.replace("h-[calc(100vh-4rem)]", "h-screen");
+        }
+        if (window.scrollY < 32) {
+          sidebar.classList.replace("top-0", "top-16");
+          sidebar.classList.replace("h-screen", "h-[calc(100vh-4rem)]");
+        }
+      });
+    </script>
+  </aside>
+</>

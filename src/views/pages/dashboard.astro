@@ -1,0 +1,21 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { navItems } from "@assets/navItems";
+const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title: "To Do App" };
+let renderTest = new Array(50).fill(0);
+import Sidebar from "@components/Dashboard/Sidebar.astro";
+---
+
+<MainLayout title={title}>
+  <section class="w-full h-full flex flex-col pb-16 sm:pb-0">
+    <div class="w-full h-full flex">
+      {/*Sidebar*/}
+      <Sidebar />
+      <div class="flex-1">
+        {renderTest.map(() => <br class="" />)}
+        {renderTest.map(() => <br class="" />)}
+      </div>
+    </div>
+    <aside class="sm:hidden fixed w-full h-16 border border-sky-500 bottom-0"></aside>
+  </section>
+</MainLayout>

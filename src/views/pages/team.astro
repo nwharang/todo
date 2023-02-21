@@ -1,0 +1,9 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { navItems } from "@assets/navItems";
+const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title: "To Do App" };
+---
+
+<MainLayout title={title}>
+  <h1>{title}</h1>
+</MainLayout>

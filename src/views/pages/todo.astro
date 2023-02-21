@@ -1,0 +1,20 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import ListView from "@components/todos/List.astro";
+import { navItems } from "@assets/navItems";
+const View = ["To do", "In Progress", "Done"];
+const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title: "To Do App" };
+---
+
+<MainLayout title={title}>
+  <section class="flex flex-col flex-1 w-full h-full">
+    <h1 class="text-center text-xl p-2">To Do Lists</h1>
+    <div class="flex flex-col flex-1 sm:flex-row gap-2 my-2">
+      {
+        View.map((view) => {
+          return <ListView header={view} />;
+        })
+      }
+    </div>
+  </section>
+</MainLayout>
