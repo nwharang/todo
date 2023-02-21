@@ -2,6 +2,9 @@
 /
 ├── public/
 ├── src/
+│   └── controller/
+│   └── model/
+│   └── routes/
 │   └── views/
 |       └── pages/
 │           └── index.astro
