@@ -13,8 +13,7 @@ export default class DataMap {
      */
     constructor(filename) {
         this.filename = filename;
-        this.parseData()
-    }
+        this.parseData()    }
     async parseData() {
         this.openFile = await open(__dirname + `../model/${this.filename}.csv`);
         let parser = parse({
