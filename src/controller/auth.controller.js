@@ -13,7 +13,7 @@ const writeUser = async (req, res, next) => {
 
 // [Post] /auth/login
 const authLogin_Post = (req, res, next) => {
-
+    res.send({ message: "Login" });
 }
 
 // [Post] /auth/register
