@@ -1,0 +1,27 @@
+<!-- create team -->
+<h1>Create Team</h1>
+<form
+  action="/team"
+  method="post"
+  class="relative flex flex-wrap lg:h lg:items-center bg-white dark:bg-slate-700 rounded-3xl shadow-xl p-8 lg:p-12 mx-auto w-full max-w-6xl"
+>
+  <input
+    placeholder="Team Name" name="name"
+    class="text-black placeholder-gray-600 w-auto px-4 py-2.5 m-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+  />
+  <input
+    placeholder="Team Image" name="image"
+    class="text-black placeholder-gray-600 w-auto px-4 py-2.5 m-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+  />
+  <input name="description"
+    placeholder="Team Description"
+    class="text-black placeholder-gray-600 w-full px-4 py-2.5 m-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+  />
+  
+  <button
+    type="submit"
+    class="w-auto px-4 py-2 mt-6 font-medium tracking-wide text-base border capitalize transition-colors duration-200 transform bg-blueGray-900 rounded-md hover:bg-blueGray-600 focus:outline-none focus:bg-blueGray-600"
+  >
+    Create Team
+  </button>
+</form>

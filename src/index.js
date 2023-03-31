@@ -5,6 +5,8 @@ import { handler as ssrHandler } from '../build/server/index.mjs';
 import cookieParser from 'cookie-parser'
 import Router from './routes/index.js'
 import bodyParser from 'body-parser'
+import axios from "axios";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

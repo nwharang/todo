@@ -1,0 +1,13 @@
+---
+import {z} from "zod";
+import axios from "axios";
+import MainLayout from "@layouts/MainLayout.astro";
+import { navItems } from "@assets/navItems";
+import Register from "@components/auth/RegisterPanel.astro";
+const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title: "To Do App - Register" };
+---
+
+<MainLayout title={title}>
+    <Register />
+</MainLayout>
+

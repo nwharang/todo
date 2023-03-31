@@ -2,6 +2,7 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import ListView from "@components/todos/List.astro";
 import { navItems } from "@assets/navItems";
+import Addtodos from "@components/todos/Addtodos.astro";
 const View = ["To do", "In Progress", "Done"];
 const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title: "To Do App" };
 ---
@@ -16,5 +17,6 @@ const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title:
         })
       }
     </div>
+    <Addtodos />
   </section>
 </MainLayout>

@@ -11,6 +11,7 @@ const getUser = async (req, res, next) => {
 
 // [Get] /api/todos
 const getTodo = async (req, res, next) => {
+    
 }
 
 // [Post] /api/todo

@@ -1,5 +1,5 @@
 ---
-import axios from "axios";
+//import z, axios
 ---
 
 <>
@@ -18,13 +18,14 @@ import axios from "axios";
 
       <form class="mx-auto mt-8 mb-0 max-w-md space-y-4 dark:text-black">
         <div>
-          <label for="email" class="sr-only">Email</label>
+          <label for="text" class="sr-only">Username:</label>
 
           <div class="relative">
             <input
-              type="email"
+              type="text"
+              name="username"
               class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-              placeholder="Enter email"
+              placeholder="Enter User"
             />
 
             <span
@@ -54,6 +55,7 @@ import axios from "axios";
           <div class="relative">
             <input
               type="password"
+              name="password"
               class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
               placeholder="Enter password"
             />
@@ -87,7 +89,7 @@ import axios from "axios";
         <div class="flex items-center justify-between">
           <p class="text-sm text-gray-500 dark:text-white">
             No account?
-            <a class="underline" href="">Sign up</a>
+            <a class="underline" href="/register">Sign up</a>
           </p>
 
           <button
@@ -95,7 +97,7 @@ import axios from "axios";
             class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
             onclick="login()"
           >
-            Sign in
+            Login
           </button>
         </div>
       </form>
@@ -110,12 +112,15 @@ import axios from "axios";
     </div>
   </section>
   <script is:inline>
-    console.log(z);
     function login() {
-      console.log("login");
-      axios.post("/auth/login", {
-        email: "",
-        password: "",
+      const username = document.querySelector("input[name=username]").value;
+      const password = document.querySelector("input[name=password]").value;
+      const data = {
+        username,
+        password,
+      };
+      axios.post("/auth/login", data).then((res) => {
+        console.log(res);
       });
     }
   </script>

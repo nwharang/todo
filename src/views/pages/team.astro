@@ -1,9 +1,28 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import { navItems } from "@assets/navItems";
-const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title: "To Do App" };
+import CreateTeam from "@/components/todos/create_team.astro";
+import Team from "@/components/Dashboard/Team.astro";
+import Sidebar from "@components/Dashboard/Sidebar.astro";
+const { title } = navItems.find((e) => e.path == Astro.url.pathname) || {
+  title: "To Do App",
+};
 ---
 
 <MainLayout title={title}>
   <h1>{title}</h1>
+  <section class="w-full h-full flex flex-col pb-16 sm:pb-0">
+    <div class="w-full h-full flex">
+      {/*Sidebar*/}
+      <Sidebar />
+      <div class="flex-1">
+        <CreateTeam />
+        <Team />
+
+      </div>
+    </div>
+    <aside class="sm:hidden fixed w-full h-16 border border-sky-500 bottom-0">
+    </aside>
+  </section>
+
 </MainLayout>

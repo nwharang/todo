@@ -8,16 +8,19 @@ const getUser = async (req, res, next) => {
 }
 
 const writeUser = async (req, res, next) => {
+    
 }
 
 
 // [Post] /auth/login
 const authLogin_Post = (req, res, next) => {
     res.send({ message: "Login" });
+    console.log(data);
 }
 
 // [Post] /auth/register
 const authRegister_Post = (req, res, next) => {
+    res.send({ message: "Register" });
 }
 
 

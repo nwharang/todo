@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import { navItems } from "@assets/navItems";
+import Team from "./team.astro";
 const { title } = navItems.find((e) => e.path == Astro.url.pathname) || { title: "To Do App" };
 let renderTest = new Array(50).fill(0);
 import Sidebar from "@components/Dashboard/Sidebar.astro";
@@ -16,6 +17,9 @@ import Sidebar from "@components/Dashboard/Sidebar.astro";
         {renderTest.map(() => <br class="" />)}
       </div>
     </div>
-    <aside class="sm:hidden fixed w-full h-16 border border-sky-500 bottom-0"></aside>
+    <Team/>
+    <aside class="sm:hidden fixed w-full h-16 border border-sky-500 bottom-0">
+      
+    </aside>
   </section>
 </MainLayout>
